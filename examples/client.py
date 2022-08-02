@@ -25,16 +25,16 @@ import urllib2
 
 class Client:
     def __init__(self, ip, port = 80, scheme = "http"):
-        self.server_url = scheme + '://' + ip + ':' + str(port) + '/v1'
+        self.server_url = f'{scheme}://{ip}:{str(port)}/v1'
 
     def get_all_cpes(self):
-        return self.__json_from_url(self.server_url + '/cpe')
+        return self.__json_from_url(f'{self.server_url}/cpe')
 
     def get_cves_per_cpe(self, cpe):
-        return self.__json_from_url(self.server_url + '/cpe/' + cpe)
+        return self.__json_from_url(f'{self.server_url}/cpe/{cpe}')
 
     def get_details_per_cve(self, cve):
-        return self.__json_from_url(self.server_url + '/cve/' + cve)
+        return self.__json_from_url(f'{self.server_url}/cve/{cve}')
 
     def __json_from_url(self, url_str):
         return json.load(urllib2.urlopen(url_str))
