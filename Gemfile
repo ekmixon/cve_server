@@ -16,7 +16,7 @@ end
 group :development, :test do
   gem 'pry', '~> 0.12.2'
   gem 'rspec', '~> 3.8.0'
-  gem 'rack-test', '~> 1.1.0'
+  gem 'rack-test', '~> 2.0.0'
   gem 'simplecov', '~> 0.17.0', :require => false
 end
 
